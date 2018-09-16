@@ -1,10 +1,33 @@
-//Imports
-const mongoose = require('mongoose'),
-    Schema = mongoose.Schema,
-    bcrypt = require(bcrypt),
-    SALT_WORK_FACTOR = 10;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
+// create user Schema & model, password not hashed / salted, will look up later
 const UserSchema = new Schema({
-    username: { type: String, required: true, index: { unique: true } },
-    password: { type: String, required: true }
+    name: {
+        type: String,
+        required: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    spent_money: {
+      type: Number,
+      default: 0
+    },
+    prev_login {
+      type: Date
+    }
+    /*
+    purchases {
+
+    }
+    coupons: {
+
+    }
+    */
 });
+
+const User = mongoose.model('user', UserSchema);
+
+module.exports = User;
