@@ -1,3 +1,4 @@
+
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
@@ -15,17 +16,18 @@ const UserSchema = new Schema({
       type: Number,
       default: 0
     },
-    prev_login {
+    prev_login: {
       type: Date
-    }
-    /*
-    purchases {
+    },
+    purchases: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Purchase'
+    }],
+    coupons: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Purchase'
+    }]
 
-    }
-    coupons: {
-
-    }
-    */
 });
 
 const User = mongoose.model('user', UserSchema);

@@ -26,4 +26,4 @@ const QuestSchema = new Schema({
 
 const Quest = mongoose.model('quest', QuestSchema);
 
-module.exports = User;
+module.exports = Quest;

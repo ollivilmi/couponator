@@ -18,13 +18,12 @@ const StoreSchema = new Schema({
       type: Number,
       require: true
     },
-    monthly_tresholds: [Number],
-    require: true
-    /*
-    coupons: {
+    coupons: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Coupon'
+    }],
+    monthly_tresholds: [Number]
 
-    }
-    */
 });
 
 const Store = mongoose.model('store', StoreSchema);

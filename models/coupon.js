@@ -16,7 +16,7 @@ const CouponSchema = new Schema({
     type: Number,
     required: true
   },
-  image {
+  image: {
     type: String //link to the URL
   }
 });

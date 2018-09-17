@@ -1,8 +1,31 @@
 const express = require('express');
 const path = require('path');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8000;
 
+//connect to mongodb
+mongoose.connect('mongodb://localhost/couponator');
+mongoose.Promise = global.Promise;
+
+//Middleware here
+app.use(bodyParser.json());
+
+// initialize routes
+app.use('/api', require('./routes/user_api'));
+
+
+//error handling Middleware
+app.use(function(err, req, res, next) {
+  res.status(422).send({error: err.message});
+});
+
+app.listen(port, function(){
+  console.log('now listening for requests');
+});
+
+/*
 // API calls
 app.get('/api/hello', (req, res) => {
   res.send({ express: 'Hello From Express' });
@@ -16,3 +39,4 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 app.listen(port, () => console.log(`Listening on port ${port}`));
+*/
