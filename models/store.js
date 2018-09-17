@@ -1,6 +1,18 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+//create geolocation schema
+const GeoSchema = new Schema({
+  type: {
+    type: String,
+    default: "Point"
+  },
+  coordinates: {
+    type: [Number],
+    index: "2dsphere"
+  }
+});
+
 // create store Schema & model
 const StoreSchema = new Schema({
     name: {
@@ -10,10 +22,7 @@ const StoreSchema = new Schema({
     description: {
       type: String
     },
-    location: { //GeoJSON format
-      type: { type: String },
-      coordinates: [Number] // longitude, latitude
-    },
+    location: GeoSchema,
     return_on_investment: {
       type: Number,
       require: true

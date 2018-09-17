@@ -3,16 +3,11 @@ const router = express.Router();
 
 //import schemas
 const User = require('../models/user');
-const Coupon = require('../models/coupon');
-const Purchase = require('../models/purchase');
-const Store = require('../models/store');
-const Quest = require('../models/quest');
-
 
 
 //GET
 
-//get a list of users from the db TODO
+//get a list of users from the db
 router.get('/users', function(req, res, next) {
   res.send({type: 'GET'});
 });
@@ -30,15 +25,20 @@ router.post('/users', function(req, res, next) {
 
 //update user in the db
 router.put('/users/:id', function(req, res, next){
-    res.send({type: 'PUT'});
+  User.findByIdAndUpdate({_id: req.params.id}, req.body).then(function(){
+    User.findOne({_id: req.params.id}).then(function(user){
+      res.send(user);
+    });
+  });
 });
 
 //DELETE
 
 //delete user from db
 router.delete('/users/:id', function(req, res, next){
-    User.findByidAndRemove({_id});
-    res.send({type: 'DELETE'});
+    User.findByIdAndRemove({_id: req.params.id}).then(function(user) {
+      res.send(user);
+    });
 });
 
 module.exports = router;

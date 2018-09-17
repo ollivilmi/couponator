@@ -12,7 +12,7 @@ const CouponSchema = new Schema({
     type: String,
     required : true
   },
-  reward_value: {
+  reward_value: { //in euro's
     type: Number,
     required: true
   },

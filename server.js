@@ -14,6 +14,8 @@ app.use(bodyParser.json());
 
 // initialize routes
 app.use('/api', require('./routes/user_api'));
+app.use('/api', require('./routes/store_api'));
+app.use('/api', require('./routes/coupon_api'));
 
 
 //error handling Middleware
