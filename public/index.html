@@ -6,10 +6,17 @@
   </head>
   <body>
     <h1>Couponator test</h1>
+    <p>Add user to db </p>
     <form method="post" action="/api/users">
-      <label>Enter Your Name</label><br>
       <input type="text" name="name" placeholder="Enter name..." required>
       <input type="password" name="password" placeholder="Enter password..." required>
+      <input type="submit" value="submit">
+    </form>
+    <p>Add coupon to db</p>
+    <form method="post" action="/api/coupons">
+      <input type="text" name="name" placeholder="Enter name..." required><br>
+      <input type="text" name="description" placeholder="Enter description..." required><br>
+      <input type="number step="0.1" name="reward_value" placeholder="Enter reward_value" required><br>
       <input type="submit" value="submit">
     </form>
   </body>
