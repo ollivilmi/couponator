@@ -10,7 +10,9 @@ mongoose.connect('mongodb://localhost/couponator');
 mongoose.Promise = global.Promise;
 
 //Middleware here
+app.use(express.static('public'));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true}));
 
 // initialize routes
 app.use('/api', require('./routes/user_api'));
@@ -26,6 +28,7 @@ app.use(function(err, req, res, next) {
 app.listen(port, function(){
   console.log('now listening for requests');
 });
+
 
 /*
 // API calls

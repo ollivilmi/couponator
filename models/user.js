@@ -25,7 +25,7 @@ const UserSchema = new Schema({
     }],
     coupons: [{
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Purchase'
+      ref: 'Coupon'
     }]
 
 });
