@@ -3,6 +3,7 @@ echo "Starting installation..."
 npm install
 cd client
 npm install
+npm i redux
 npm install --save react-redux
 cd ..
 npm i nodemon -g
