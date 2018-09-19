@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 //create geolocation schema
@@ -15,26 +15,27 @@ const GeoSchema = new Schema({
 
 // create store Schema & model
 const StoreSchema = new Schema({
-    name: {
-      type: String,
-      required: true
-    },
-    description: {
-      type: String
-    },
-    location: GeoSchema,
-    return_on_investment: {
-      type: Number,
-      require: true
-    },
-    coupons: [{
+  name: {
+    type: String,
+    required: true
+  },
+  description: {
+    type: String
+  },
+  location: GeoSchema,
+  return_on_investment: {
+    type: Number,
+    require: true
+  },
+  coupons: [
+    {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Coupon'
-    }],
-    monthly_tresholds: [Number]
-
+      ref: "Coupon"
+    }
+  ],
+  monthly_tresholds: [Number]
 });
 
-const Store = mongoose.model('store', StoreSchema);
+const Store = mongoose.model("store", StoreSchema);
 
 module.exports = Store;

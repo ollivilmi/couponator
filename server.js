@@ -1,34 +1,32 @@
-const express = require('express');
-const path = require('path');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
+const express = require("express");
+const path = require("path");
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 const app = express();
 const port = process.env.PORT || 8000;
 
 //connect to mongodb
-mongoose.connect('mongodb://localhost/couponator');
+mongoose.connect("mongodb://localhost/couponator");
 mongoose.Promise = global.Promise;
 
 //Middleware here
-app.use(express.static('public'));
+app.use(express.static("public"));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // initialize routes
-app.use('/api', require('./routes/user_api'));
-app.use('/api', require('./routes/store_api'));
-app.use('/api', require('./routes/coupon_api'));
-
+app.use("/api", require("./routes/user_api"));
+app.use("/api", require("./routes/store_api"));
+app.use("/api", require("./routes/coupon_api"));
 
 //error handling Middleware
 app.use(function(err, req, res, next) {
-  res.status(422).send({error: err.message});
+  res.status(422).send({ error: err.message });
 });
 
-app.listen(port, function(){
-  console.log('now listening for requests');
+app.listen(port, function() {
+  console.log("now listening for requests");
 });
-
 
 /*
 // API calls
