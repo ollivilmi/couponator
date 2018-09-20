@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import postReducer from './postReducer';
+import boxReducer from './boxReducer';
 
 export default combineReducers({
-  posts: postReducer
+  boxes: boxReducer
 });

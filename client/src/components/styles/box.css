@@ -1,0 +1,22 @@
+.boxText {
+    width: 20%;
+    margin: 0 auto;
+}
+
+img {
+    border: 1px solid white;
+    border-radius: 5px;
+
+}
+
+.boxWrapper {
+    margin-top: 1em;
+    width: auto;
+    height: 100%;
+    text-align: center;
+}
+
+h4 {
+    width: 100%;
+    text-align: center;
+}
