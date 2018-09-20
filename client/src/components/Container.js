@@ -15,11 +15,14 @@ const ProgressBar = props => {
 const Row = props => {
     return (
         <div className="row">
-            <h4>Box for store</h4>
-            <a href={props.openBox}>
-                <img className="align-self-center mr-3 boxImg" src="/images/box.png" alt="Box"/>
-           </a>
+            <h4>Box for Verkkokauppa</h4>
            <ProgressBar progress="70"/>
+            <div className="boxWrapper">
+                <a href={props.openBox}> 
+                    <img className="align-self-center mr-3 boxImg" src="/images/box.png" alt="Box"/>
+                    <p>Open me!</p>
+                </a>
+            </div>
         </div>
     )
 }

@@ -4,7 +4,7 @@ import './styles/app.css';
 const Tab = props => {
   return (
     <li className="nav-item">
-      <a className="nav-link" href="#">{props.title}</a>
+      <a className={props.active} href="#">{props.title}</a>
     </li>
   )
 }
@@ -12,11 +12,11 @@ const Tab = props => {
 class Nav extends Component {
   render() {
     return (
-      <ul className="nav">
-        <Tab title="Link1" />
-        <Tab title="Link2" />
-        <Tab title="Link3" />
-        <Tab title="Link4" />
+      <ul className="nav nav-pills nav-fill">
+        <Tab active="nav-link active" title="Link1" />
+        <Tab active="nav-link" title="Link2" />
+        <Tab active="nav-link" title="Link3" />
+        <Tab active="nav-link" title="Link4" />
       </ul>
     )
   }
