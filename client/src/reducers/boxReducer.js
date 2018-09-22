@@ -1,9 +1,8 @@
-import { FETCH_BOXES, OPEN_BOX, BOX_VIEW, TOGGLE_VIEW } from '../actions/types';
+import { FETCH_BOXES, OPEN_BOX } from '../actions/types';
 
 const initialState = {
   boxes: [],
-  coupons: [],
-  view: BOX_VIEW
+  coupons: []
 };
 
 export default function(state = initialState, action) {
@@ -14,16 +13,10 @@ export default function(state = initialState, action) {
         boxes: action.payload
       };
       case OPEN_BOX:
-      console.log(action);
       return {
         ...state,
         coupons: action.payload
       };
-      case TOGGLE_VIEW:
-      return {
-        ...state,
-        view: action.payload
-      }
     default:
       return state;
   }
