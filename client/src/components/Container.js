@@ -29,7 +29,7 @@ Container.propTypes = {
 }
 
 const mapStateToProps = state => ({
-    boxes: state.boxes.contents
+    boxes: state.boxes.userBoxes
 });
 
 export default connect(mapStateToProps, { fetchBoxes })(Container);

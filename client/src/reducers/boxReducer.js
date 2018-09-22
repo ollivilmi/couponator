@@ -1,7 +1,8 @@
-import { FETCH_BOXES } from '../actions/types';
+import { FETCH_BOXES, OPEN_BOX } from '../actions/types';
 
 const initialState = {
-  contents: [],
+  userBoxes: [],
+  coupons: []
 };
 
 export default function(state = initialState, action) {
@@ -9,7 +10,13 @@ export default function(state = initialState, action) {
     case FETCH_BOXES:
       return {
         ...state,
-        contents: action.payload
+        userBoxes: action.payload
+      };
+      case OPEN_BOX:
+      console.log(action);
+      return {
+        ...state,
+        coupons: action.payload
       };
     default:
       return state;

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './styles/box.css';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { openBox } from '../actions/boxActions';
 
 const ProgressBar = props => {
     return (
@@ -27,7 +30,7 @@ class Box extends Component {
                 <h4>{this.props.title}</h4>
                 <ProgressBar progress={this.props.progress}/>
                 <div className="boxWrapper">
-                    <a href={this.props.openBox}> 
+                    <a onClick={() => this.props.openBox(this.props)}> 
                         <img className="align-self-center mr-3 boxImg" src="/images/box.png" alt="Box"/>
                         {this.boxText(this.props.amount)}
                     </a>
@@ -37,4 +40,8 @@ class Box extends Component {
     }
 }
 
-export default Box;
+Box.propTypes = {
+    openBox: PropTypes.func.isRequired,
+}
+
+export default connect(null, { openBox })(Box);

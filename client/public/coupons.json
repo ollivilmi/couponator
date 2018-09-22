@@ -1,0 +1,17 @@
+[  
+    {  
+       "id":1,
+       "title":"Headphones -95%",
+       "store":"Verkkokauppa"
+    },
+    {  
+        "id":2,
+        "title":"Juhla Mokka 3 for the price of 2",
+        "store":"Prisma"
+     },
+     {  
+        "id":3,
+        "title":"Tampons -20%",
+        "store":"Prisma"
+     }
+ ]
