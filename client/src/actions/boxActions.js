@@ -1,4 +1,4 @@
-import { FETCH_BOXES, OPEN_BOX } from './types';
+import { FETCH_BOXES, OPEN_BOX, TOGGLE_VIEW } from './types';
 
 export const fetchBoxes = () => dispatch => {
   fetch('../boxes.json')
@@ -28,3 +28,10 @@ export const openBox = box => dispatch => {
       })
   );
 };
+
+export const toggleView = view => dispatch => {
+  dispatch({
+    type: TOGGLE_VIEW,
+    payload: view
+  })
+}
