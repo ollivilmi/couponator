@@ -1,4 +1,4 @@
-import { FETCH_BOXES, OPEN_BOX, TOGGLE_OPENING } from './types';
+import { FETCH_BOXES, OPEN_BOX, TOGGLE_OPENING, RESET_COUPONS } from './types';
 
 export const fetchBoxes = () => dispatch => {
   fetch('../boxes.json')
@@ -31,5 +31,11 @@ export const openBox = box => dispatch => {
 export const toggleOpening = () => dispatch => {
   dispatch({
       type: TOGGLE_OPENING
+  })
+}
+
+export const resetCoupons = () => dispatch => {
+  dispatch({
+      type: RESET_COUPONS
   })
 }
