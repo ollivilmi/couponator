@@ -1,4 +1,4 @@
-import { FETCH_BOXES, OPEN_BOX, TOGGLE_OPENING, RESET_COUPONS } from '../actions/types';
+import { FETCH_BOXES, OPEN_BOX, CLOSE_BOX } from '../actions/types';
 
 const initialState = {
   boxes: [],
@@ -13,22 +13,21 @@ export default function(state = initialState, action) {
         ...state,
         boxes: action.payload
       };
-      case OPEN_BOX:
-      return {
-        ...state,
-        coupons: action.payload,
-        opening: true
-      };
-      case TOGGLE_OPENING:
-      return {
-        ...state,
-        opening: (!state.opening)
-      }
-      case RESET_COUPONS:
-        return {
-          ...state,
-          coupons: []
-        }
+
+    case OPEN_BOX:
+    return {
+      ...state,
+      coupons: action.payload,
+      opening: true
+    };
+
+    case CLOSE_BOX:
+    return {
+      ...state,
+      coupons: [],
+      opening: false
+    }
+
     default:
       return state;
   }

@@ -1,4 +1,4 @@
-import { FETCH_BOXES, OPEN_BOX, TOGGLE_OPENING, RESET_COUPONS } from './types';
+import { FETCH_BOXES, OPEN_BOX, CLOSE_BOX } from './types';
 
 export const fetchBoxes = () => dispatch => {
   fetch('../boxes.json')
@@ -12,6 +12,12 @@ export const fetchBoxes = () => dispatch => {
 };
 
 export const openBox = box => dispatch => {
+    console.log(`Trying to open box: ${box.title}`);
+    if (box.amount < 1) {
+      return;
+    }
+    // box will be used to determine which box to remove & open for the user
+    // currently just fetching some random coupon json for testing
     fetch('../coupons.json')/*, {
       method: 'POST',
       headers: {
@@ -20,22 +26,19 @@ export const openBox = box => dispatch => {
       body: JSON.stringify(box)
     })*/
     .then(res => res.json())
-    .then(coupons =>
+    .then(coupons => {
+      // TODO : implement the handling of an invalid response
       dispatch({
         type: OPEN_BOX,
         payload: coupons
       })
+    }
   );
 };
 
-export const toggleOpening = () => dispatch => {
+export const closeBox = () => dispatch => {
+  console.log("Closing box and clearing coupons from state");
   dispatch({
-      type: TOGGLE_OPENING
-  })
-}
-
-export const resetCoupons = () => dispatch => {
-  dispatch({
-      type: RESET_COUPONS
+      type: CLOSE_BOX
   })
 }

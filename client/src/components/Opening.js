@@ -1,47 +1,55 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { toggleOpening, resetCoupons } from '../actions/boxActions';
+import { closeBox } from '../actions/boxActions';
 
-const Coupon = props => {
-    return (
-            <button className="coupon">
-                <div>
-                    <h4>{props.store}</h4>
-                    <p>{props.title}</p>
+class Coupon extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { visibility: {display: "none"} }
+        this.show = this.show.bind(this);
+    }
+
+    show() {
+        this.setState((prevState, props) => {
+            return {visibility: {display: "block"}};
+        });
+    }
+
+    render() {
+        return (
+            <button onClick={this.show} className="btn btn-secondary btn-lg btn-block coupon">
+                <div style={this.state.visibility}>
+                    <h4>{this.props.store}</h4>
+                    <p>{this.props.title}</p>
                 </div>
             </button>
-    )
+        )
+    }
 }
 
 class Opening extends Component {
     render() {
         return (
-            <div>
+            <div className="opening">
                 {
                 this.props.coupons.map((coupon, index) => {
                     return <Coupon key={coupon.id} store={coupon.store} title={coupon.title} />
                 })
                 }
-                <button onClick={() => {
-                    this.props.toggleOpening();
-                    this.props.resetCoupons();
-                }}>Close</button>
+                <button className="btn btn-primary btn-lg centered" onClick={() => this.props.closeBox()}>Close</button>
             </div>
         )
     }
 }
 
 Opening.propTypes = {
-    toggleOpening: PropTypes.func.isRequired,
-    resetCoupons: PropTypes.func.isRequired,
-    isOpening: PropTypes.bool.isRequired,
+    closeBox: PropTypes.func.isRequired,
     coupons: PropTypes.array.isRequired
 }
   
 const mapStateToProps = state => ({
-    isOpening: state.container.opening,
     coupons: state.container.coupons
 });
 
-export default connect(mapStateToProps, { toggleOpening, resetCoupons })(Opening);
+export default connect(mapStateToProps, { closeBox })(Opening);

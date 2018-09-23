@@ -12,7 +12,7 @@ class BoxView extends Component {
 
     render() {
         return  (
-            <div className="container">
+            <div className="container bgTitanium">
                 {this.props.boxes.map(box => (
                     <Box key={box.id} title={box.title} amount={box.amount} progress={box.progress}/>
                 ))}
