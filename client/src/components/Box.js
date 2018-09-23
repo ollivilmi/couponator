@@ -24,7 +24,7 @@ class Box extends Component {
                 <div className="boxWrapper">
                     <a onClick={() => this.props.openBox(this.props)}> 
                         <img className="align-self-center mr-3 boxImg" src="/images/box.png" alt="Box"/>
-                        <p>{this.props.amount > 0 ? "Open" : "None available"}</p>
+                        <p>{this.props.amount > 0 ? `[${this.props.amount}] Open` : "None available"}</p>
                     </a>
                 </div>
             </div>
