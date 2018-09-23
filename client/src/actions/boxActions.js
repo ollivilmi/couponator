@@ -1,4 +1,4 @@
-import { FETCH_BOXES, OPEN_BOX } from './types';
+import { FETCH_BOXES, OPEN_BOX, TOGGLE_OPENING } from './types';
 
 export const fetchBoxes = () => dispatch => {
   fetch('../boxes.json')
@@ -12,7 +12,6 @@ export const fetchBoxes = () => dispatch => {
 };
 
 export const openBox = box => dispatch => {
-    console.log(box);
     fetch('../coupons.json')/*, {
       method: 'POST',
       headers: {
@@ -28,3 +27,9 @@ export const openBox = box => dispatch => {
       })
   );
 };
+
+export const toggleOpening = () => dispatch => {
+  dispatch({
+      type: TOGGLE_OPENING
+  })
+}

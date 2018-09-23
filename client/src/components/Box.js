@@ -16,14 +16,6 @@ const ProgressBar = props => {
 }
 
 class Box extends Component {
-    boxText = amount => {
-        if (amount > 0) {
-            return <p className="boxText">({amount}) Open</p>
-        } else {
-            return <p className="boxText">None available</p>
-        }
-    }
-
     render() {
         return (
             <div className="row">
@@ -32,7 +24,7 @@ class Box extends Component {
                 <div className="boxWrapper">
                     <a onClick={() => this.props.openBox(this.props)}> 
                         <img className="align-self-center mr-3 boxImg" src="/images/box.png" alt="Box"/>
-                        {this.boxText(this.props.amount)}
+                        <p>{this.props.amount > 0 ? "Open" : "None available"}</p>
                     </a>
                 </div>
             </div>
