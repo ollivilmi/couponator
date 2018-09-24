@@ -1,0 +1,17 @@
+[  
+    {  
+       "name":"Verkkokauppa",
+       "description": "Electronics",
+       "nearest":"address_here"
+    },
+    {  
+        "name":"Prisma",
+        "description": "General goods & food",
+        "nearest":"address_here"
+     },
+     {  
+        "name":"Burger King",
+        "description": "Burger flipping",
+        "nearest":"address_here"
+     }
+ ]

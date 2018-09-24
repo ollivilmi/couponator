@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import './styles/app.css';
 import { BOX_VIEW, STORE_VIEW, COUPON_VIEW, USER_VIEW } from '../actions/types';
 import BoxView from "./views/BoxView";
-import { StoreView } from "./views/StoreView";
+import StoreView from "./views/StoreView";
 import { CouponView } from "./views/CouponView";
 import { UserView } from "./views/UserView";
 
