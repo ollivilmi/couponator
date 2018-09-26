@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { closeBox } from '../actions/boxActions';
+import { closeBox } from '../../actions/boxActions';
 
 class Coupon extends Component {
     constructor(props) {
@@ -28,7 +28,7 @@ class Coupon extends Component {
     }
 }
 
-class Opening extends Component {
+class OpeningView extends Component {
     render() {
         return (
             <div className="opening">
@@ -43,7 +43,7 @@ class Opening extends Component {
     }
 }
 
-Opening.propTypes = {
+OpeningView.propTypes = {
     closeBox: PropTypes.func.isRequired,
     coupons: PropTypes.array.isRequired
 }
@@ -52,4 +52,4 @@ const mapStateToProps = state => ({
     coupons: state.container.coupons
 });
 
-export default connect(mapStateToProps, { closeBox })(Opening);
+export default connect(mapStateToProps, { closeBox })(OpeningView);

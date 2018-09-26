@@ -2,8 +2,7 @@ import { FETCH_BOXES, OPEN_BOX, CLOSE_BOX } from '../actions/types';
 
 const initialState = {
   boxes: [],
-  coupons: [],
-  opening: false
+  coupons: []
 };
 
 export default function(state = initialState, action) {
@@ -17,15 +16,13 @@ export default function(state = initialState, action) {
     case OPEN_BOX:
     return {
       ...state,
-      coupons: action.payload,
-      opening: true
+      coupons: action.payload
     };
 
     case CLOSE_BOX:
     return {
       ...state,
-      coupons: [],
-      opening: false
+      coupons: []
     }
 
     default:

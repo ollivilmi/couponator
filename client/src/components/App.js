@@ -3,20 +3,19 @@ import Nav from "./Nav";
 import Container from "./Container";
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Opening from "./Opening";
 
 class App extends Component {
   render() {
-    return this.props.isOpening ? <Opening/> : <div><Nav/><Container/></div>
+    return <div>{this.props.navActive ? <Nav/> : ""}<Container/></div>
   }
 }
 
 App.propTypes = {
-  isOpening: PropTypes.bool.isRequired
+  navActive: PropTypes.bool.isRequired
 }
 
 const mapStateToProps = state => ({
-  isOpening: state.container.opening
+  navActive: state.nav.navActive
 });
 
 export default connect(mapStateToProps)(App);

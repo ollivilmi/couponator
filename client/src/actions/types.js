@@ -9,6 +9,7 @@ export const FETCH_COUPONS_USER = "FETCH_COUPONS_USER";
 // Actions for toggling view
 export const OPEN_BOX = "OPEN_BOX";
 export const TOGGLE_VIEW = "TOGGLE_VIEW";
+export const TOGGLE_NAV = "TOGGLE_NAV";
 export const CLOSE_BOX = "CLOSE_BOX";
 export const CLOSE_COUPON_VIEW_STORE = "CLOSE_COUPON_VIEW_STORE";
 export const RESET_COUPONS = "RESET_COUPONS"
@@ -18,3 +19,4 @@ export const BOX_VIEW = "Boxes";
 export const STORE_VIEW = "Stores";
 export const COUPON_VIEW = "Coupons";
 export const USER_VIEW = "User";
+export const OPENING_VIEW = "Opening";

@@ -1,7 +1,8 @@
-import { TOGGLE_VIEW, BOX_VIEW } from '../actions/types';
+import { TOGGLE_VIEW, BOX_VIEW, TOGGLE_NAV } from '../actions/types';
 
 const initialState = {
-  view: BOX_VIEW
+  view: BOX_VIEW,
+  navActive: true
 };
 
 export default function(state = initialState, action) {
@@ -11,6 +12,13 @@ export default function(state = initialState, action) {
         ...state,
         view: action.payload
       }
+
+      case TOGGLE_NAV:
+      return {
+        ...state,
+        navActive: !state.navActive
+      }
+
     default:
       return state;
   }
