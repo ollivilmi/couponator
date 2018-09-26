@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchBoxes } from '../../actions/boxActions';
 import Box from "./components/Box";
+import '../styles/boxview.css';
 
 class BoxView extends Component {
     componentWillMount() {
@@ -11,7 +12,7 @@ class BoxView extends Component {
 
     render() {
         return  (
-            <div className="container bgTitanium">
+            <div className="container bgWhite">
                 {
                     this.props.boxes.map(box => (
                         <Box key={box.id} title={box.title} amount={box.amount} progress={box.progress}/>

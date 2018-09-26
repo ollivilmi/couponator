@@ -1,5 +1,5 @@
 html, #root {
-    background: #003550;  /* fallback for old browsers */
+    background-image: url("/images/bgBlue.jpg");
     font-family: 'Notable', sans-serif;
 }
 
@@ -8,28 +8,10 @@ p {
     font-family: 'Oswald', sans-serif;
 }
 
-.nav {
-    margin-bottom: 1em;
-    color: white;
-    font-size: 0.9em;
-}
-
 .container {
     width: 90%;
     color: black;
     border-radius: 3em;
-}
-
-.row {
-    height: 100%;
-    padding-top: 1em;
-    padding-bottom: 1em;
-}
-
-.boxImg {
-    width: 60%;
-    height: 60%;
-    margin: 0 auto;
 }
 
 h4 {
@@ -37,20 +19,11 @@ h4 {
     padding: 2px;
 }
 
-.progress {
-    width: 70%;
+.centered {
     margin: 0 auto;
 }
 
 .coupon {
     min-height: 5em;
     margin: 0 1em 1em 0;
-}
-
-.centered {
-    margin: 0 auto;
-}
-
-.bgTitanium {
-    background: white;
 }

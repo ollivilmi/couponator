@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import Stores from "./components/Stores";
+import StoreMenu from "./components/StoreMenu";
 import { fetchCouponsForStore } from '../../actions/storeActions';
 import { toggleNav } from '../../actions/viewActions';
-import { Coupons } from "./components/Coupons";
+import { CouponMenu } from "./components/CouponMenu";
 
 class StoreView extends Component {
     render() {
@@ -14,8 +14,8 @@ class StoreView extends Component {
                 {
                     // Add more props to Stores -> description etc.
                     this.props.navActive ? 
-                    <Stores clickHandler={this.props.fetchCouponsForStore}/> : 
-                    <Coupons coupons={this.props.coupons} return={this.props.toggleNav}/>
+                    <StoreMenu clickHandler={this.props.fetchCouponsForStore}/> : 
+                    <CouponMenu coupons={this.props.coupons} return={this.props.toggleNav}/>
                 }
             </div>
         )

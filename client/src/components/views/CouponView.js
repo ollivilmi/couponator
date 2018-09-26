@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import Stores from "./components/Stores";
+import StoreMenu from "./components/StoreMenu";
 import { fetchCouponsForUser } from '../../actions/storeActions';
 import { toggleNav } from '../../actions/viewActions';
-import { Coupons } from "./components/Coupons";
+import { CouponMenu } from "./components/CouponMenu";
 
 // Basically the same as StoreView as of now - could use the same component with different props.
 // Separate files as it may not be the case in the future / follows the convention used so far
@@ -15,8 +15,8 @@ class CouponView extends Component {
             <div className="container">
                 {
                     this.props.navActive ? 
-                    <Stores clickHandler={this.props.fetchCouponsForUser}/> : 
-                    <Coupons coupons={this.props.coupons} return={this.props.toggleNav}/>
+                    <StoreMenu clickHandler={this.props.fetchCouponsForUser}/> : 
+                    <CouponMenu coupons={this.props.coupons} return={this.props.toggleNav}/>
                 }
             </div>
         )

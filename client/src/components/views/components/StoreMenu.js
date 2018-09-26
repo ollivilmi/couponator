@@ -5,14 +5,14 @@ import { fetchStores } from '../../../actions/storeActions';
 
 export const Store = props => {
     return (
-        <button onClick={props.toggleView} className="btn btn-secondary btn-lg btn-block coupon">
+        <button onClick={props.toggleView} className="btn btn-secondary btn-lg btn-block">
             <h4>{props.name}</h4>
             <p>{props.description}</p>
         </button>
     )
 }
 
-class Stores extends Component {
+class StoreMenu extends Component {
     componentWillMount() {
         this.props.fetchStores();
     }
@@ -32,7 +32,7 @@ class Stores extends Component {
     }
 }
 
-Stores.propTypes = {
+StoreMenu.propTypes = {
     fetchStores: PropTypes.func.isRequired,
     stores: PropTypes.array.isRequired
 }
@@ -41,4 +41,4 @@ const mapStateToProps = state => ({
     stores: state.storeView.stores,
 });
 
-export default connect(mapStateToProps, { fetchStores })(Stores);
+export default connect(mapStateToProps, { fetchStores })(StoreMenu);
