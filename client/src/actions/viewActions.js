@@ -5,10 +5,10 @@ export const toggleView = view => dispatch => {
         type: TOGGLE_VIEW,
         payload: view
     })
-}
+};
 
 export const toggleNav = () => dispatch => {
     dispatch({
         type: TOGGLE_NAV
     })
-}
+};

@@ -6,10 +6,6 @@ import { toggleView } from '../actions/viewActions';
 import { BOX_VIEW, COUPON_VIEW, STORE_VIEW, USER_VIEW } from '../actions/types';
 
 class Nav extends Component {
-  componentWillMount() {
-    this.props.toggleView(BOX_VIEW);
-  }
-
   mapViews = () => {
     return this.props.views.map((view, index) => {
       return (

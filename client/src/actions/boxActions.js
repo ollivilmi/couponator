@@ -55,4 +55,4 @@ export const closeBox = () => dispatch => {
     type: TOGGLE_VIEW,
     payload: BOX_VIEW
   })
-}
+};

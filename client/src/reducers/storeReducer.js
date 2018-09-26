@@ -1,9 +1,8 @@
-import { FETCH_STORES, FETCH_COUPONS_STORE, CLOSE_COUPON_VIEW_STORE } from '../actions/types';
+import { FETCH_STORES, FETCH_COUPONS_STORE } from '../actions/types';
 
 const initialState = {
   stores: [],
-  coupons: [],
-  isCouponViewActive: false
+  coupons: []
 };
 
 export default function(state = initialState, action) {
@@ -13,17 +12,13 @@ export default function(state = initialState, action) {
         ...state,
         stores: action.payload
       }
+
       case FETCH_COUPONS_STORE:
       return {
           ...state,
-          coupons: action.payload,
-          isCouponViewActive: true
+          coupons: action.payload
       }
-      case CLOSE_COUPON_VIEW_STORE:
-      return {
-          ...state,
-          isCouponViewActive: false
-      }
+
     default:
       return state;
   }
