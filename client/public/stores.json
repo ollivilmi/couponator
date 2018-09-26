@@ -2,16 +2,25 @@
     {  
        "name":"Verkkokauppa",
        "description": "Electronics",
-       "nearest":"address_here"
+       "details": {
+           "address": "Tyynenmerenkatu 11, Helsinki",
+           "summary": "General store where you can buy electronics"
+       }
     },
     {  
         "name":"Prisma",
         "description": "General goods & food",
-        "nearest":"address_here"
+        "details": {
+            "address": "Tyynenmerenkatu 11, Helsinki",
+            "summary": "General store where you can buy electronics"
+        }
      },
      {  
         "name":"Burger King",
         "description": "Burger flipping",
-        "nearest":"address_here"
+        "details": {
+            "address": "Tyynenmerenkatu 11, Helsinki",
+            "summary": "General store where you can buy electronics"
+        }
      }
  ]

@@ -7,7 +7,7 @@ import { BOX_VIEW, STORE_VIEW, COUPON_VIEW, USER_VIEW, OPENING_VIEW } from '../a
 import BoxView from "./views/BoxView";
 import StoreView from "./views/StoreView";
 import OpeningView from "./views/OpeningView";
-import { CouponView } from "./views/CouponView";
+import CouponView from "./views/CouponView";
 import { UserView } from "./views/UserView";
 
 class Container extends Component {

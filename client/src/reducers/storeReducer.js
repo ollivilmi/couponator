@@ -1,4 +1,4 @@
-import { FETCH_STORES, FETCH_COUPONS_STORE } from '../actions/types';
+import { FETCH_STORES, FETCH_COUPONS } from '../actions/types';
 
 const initialState = {
   stores: [],
@@ -13,7 +13,7 @@ export default function(state = initialState, action) {
         stores: action.payload
       }
 
-      case FETCH_COUPONS_STORE:
+      case FETCH_COUPONS:
       return {
           ...state,
           coupons: action.payload

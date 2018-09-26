@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchStores } from '../../actions/storeActions';
+import { fetchStores } from '../../../actions/storeActions';
 
 export const Store = props => {
     return (
-        <button onClick={props.toggleView} className="btn btn-secondary btn-lg btn coupon">
+        <button onClick={props.toggleView} className="btn btn-secondary btn-lg btn-block coupon">
             <h4>{props.name}</h4>
             <p>{props.description}</p>
-            <br/>
-            <p>{props.nearest}</p>
         </button>
     )
 }
@@ -27,7 +25,7 @@ class Stores extends Component {
                     toggleView={() => this.props.clickHandler(store)} 
                     name={store.name} 
                     description={store.description} 
-                    nearest={store.nearest} 
+                    details={store.details} 
                 />
             )
         })

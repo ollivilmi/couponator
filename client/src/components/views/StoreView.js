@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Stores from "./Stores";
+
+import Stores from "./components/Stores";
 import { fetchCouponsForStore } from '../../actions/storeActions';
 import { toggleNav } from '../../actions/viewActions';
-import { Coupons } from "./Coupons";
+import { Coupons } from "./components/Coupons";
 
 class StoreView extends Component {
     render() {
         return (
             <div className="container">
                 {
+                    // Add more props to Stores -> description etc.
                     this.props.navActive ? 
                     <Stores clickHandler={this.props.fetchCouponsForStore}/> : 
                     <Coupons coupons={this.props.coupons} return={this.props.toggleNav}/>
