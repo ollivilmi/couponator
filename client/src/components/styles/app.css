@@ -1,23 +1,29 @@
 html, #root {
-    background: #232526;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #003550;  /* fallback for old browsers */
+    font-family: 'Notable', sans-serif;
+}
+
+p {
+    font-family: 'Notable', sans-serif;
+    font-family: 'Oswald', sans-serif;
 }
 
 .nav {
     margin-bottom: 1em;
     color: white;
+    font-size: 0.9em;
 }
 
 .container {
     width: 90%;
-    color: white;
+    color: black;
     border-radius: 3em;
 }
 
 .row {
     height: 100%;
     padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 .boxImg {
@@ -46,7 +52,5 @@ h4 {
 }
 
 .bgTitanium {
-    background: #283048;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #859398, #283048);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #859398, #283048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: white;
 }

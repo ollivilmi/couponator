@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchBoxes } from '../../actions/boxActions';
-
-import Box from "../Box.js";
+import Box from "./components/Box";
 
 class BoxView extends Component {
     componentWillMount() {

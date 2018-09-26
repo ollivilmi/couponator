@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './styles/box.css';
+import '../../styles/box.css';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { openBox } from '../actions/boxActions';
+import { openBox } from '../../../actions/boxActions';
 
 const ProgressBar = props => {
     return (
@@ -23,8 +23,8 @@ class Box extends Component {
                 <ProgressBar progress={this.props.progress}/>
                 <div className="boxWrapper">
                     <a onClick={() => this.props.openBox(this.props)}> 
-                        <img className="align-self-center mr-3 boxImg" src="/images/box.png" alt="Box"/>
-                        <p>{this.props.amount > 0 ? `[${this.props.amount}] Open` : "None available"}</p>
+                        <img className="align-self-center mr-3 boxImg" src="/images/gift.png" alt="Box"/>
+                        <p><kbd>{this.props.amount > 0 ? `[${this.props.amount}] available` : "None available"}</kbd></p>
                     </a>
                 </div>
             </div>

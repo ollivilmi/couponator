@@ -3,6 +3,7 @@ import Nav from "./Nav";
 import Container from "./Container";
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import './styles/app.css';
 
 class App extends Component {
   render() {

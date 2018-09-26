@@ -4,9 +4,7 @@
 }
 
 img {
-    border: 1px solid white;
     border-radius: 5px;
-
 }
 
 .boxWrapper {
@@ -14,9 +12,14 @@ img {
     width: auto;
     height: 100%;
     text-align: center;
+    margin-right: 0!important;
 }
 
 h4 {
     width: 100%;
     text-align: center;
+}
+
+.progress {
+    border: 1px solid black;
 }

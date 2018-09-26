@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './styles/app.css';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { toggleView } from '../actions/viewActions';
 import { BOX_VIEW, COUPON_VIEW, STORE_VIEW, USER_VIEW } from '../actions/types';
+import './styles/nav.css';
 
 class Nav extends Component {
   mapViews = () => {
